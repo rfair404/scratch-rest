@@ -65,7 +65,7 @@
     var descriptor = {
         blocks: [
             // ['h', 'Enable REST API', 'start'],
-            [' ', 'Set %m.api_base to %s', 'set_api_base', 'api_base', 'https://example.com'],
+            [' ', 'Set %m.api_base to %s', 'set_api_base', 'api_base', 'https://demo.wp-api.org'],
             [' ', 'Set %m.api_namespace to %s', 'set_api_namespace', 'api_namespace', 'wp/v2'],
             [' ', 'Set %m.api_collection to %s', 'set_api_collection', 'api_collection', 'posts'],
 
