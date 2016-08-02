@@ -57,7 +57,9 @@
             dataType: 'json',
             success: function(ret){
                 console.log(ret);
-                var arr = Object.keys(ret).map(function (key) {return ret[key]});
+                // var arr = Object.keys(ret).map(function (key) {return ret[key]});
+                Object.keys(ret).map(key => ret[key]);
+
                 callback(ret);
             }
         });
