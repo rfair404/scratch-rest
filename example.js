@@ -82,8 +82,7 @@
         ],
         menus : {
           api_base: ['api_base', 'api_namespace', 'api_collection'],
-          collection: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
-
+          collection: [0,1,2,3,4],
         },
         url: 'https://rfair404.github.io/scratch-rest'
         // Link to extension documentation, homepage, etc.
