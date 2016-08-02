@@ -42,14 +42,14 @@
 
     ext.get_api_url = function() {
         this.api_url = this.api_base + '/' + this.api_namespace + '/' + this.api_collection;
-        console.log('the api url route is ' +  this.api_url);
+        // console.log('the api url route is ' +  this.api_url);
         return this.api_url;
     };
 
     ext._get = function(url) {
         //make a general get method later
     };
-    ext.discover_routes = function(callback) {
+    ext.get_collection = function(callback) {
     // Make an AJAX call to a given REST API and discover the available routes
     console.log( 'probing ' + this.get_api_url() );
         $.ajax({
@@ -57,18 +57,18 @@
             dataType: 'json',
             success: function(ret){
                 console.log(ret);
-                callback(ret.name);
+                callback(ret);
             }
         });
     };
     var descriptor = {
         blocks: [
             // ['h', 'Enable REST API', 'start'],
-            [' ', 'Set %m.api_base to %s', 'set_api_base', 'api_base', 'https://demo.wp-api.org'],
+            [' ', 'Set %m.api_base to %s', 'set_api_base', 'api_base', 'https://demo.wp-api.org/wp-json'],
             [' ', 'Set %m.api_namespace to %s', 'set_api_namespace', 'api_namespace', 'wp/v2'],
             [' ', 'Set %m.api_collection to %s', 'set_api_collection', 'api_collection', 'posts'],
 
-            ['R', 'Discover API Routes', 'discover_routes'],
+            ['R', 'Get Collection', 'get_collection'],
         ],
         menus : {
           api_base: ['api_base', 'api_namespace', 'api_collection'],
