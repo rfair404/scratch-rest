@@ -4,6 +4,7 @@
     var api_namespace = '';
     var api_collection = '';
     var api_url = '';
+    var current_collection = Object;
 
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {
@@ -51,15 +52,12 @@
     };
     ext.get_collection = function(callback) {
     // Make an AJAX call to a given REST API and discover the available routes
-    console.log( 'probing ' + this.get_api_url() );
+    // console.log( 'probing ' + this.get_api_url() );
         $.ajax({
             url: this.get_api_url(),
             dataType: 'json',
             success: function(ret){
-                console.log(ret);
-                // var arr = Object.keys(ret).map(function (key) {return ret[key]});
-                // Object.keys(ret).map(key => ret[key]);
-                callback(Object.keys(ret).map(function (key) {return ret[key]}));
+                this.current_collection = ret;
                 // callback(ret);
             }
         });
@@ -67,6 +65,7 @@
 
     ext.get_item_from_collection = function( pos ){
         console.log( 'grabbing ' + pos + ' of ' + this.get_api_url() );
+        callback(this.current_collection.pos);
     };
 
     var descriptor = {
@@ -75,11 +74,14 @@
             [' ', 'Set %m.api_base to %s', 'set_api_base', 'api_base', 'https://demo.wp-api.org/wp-json'],
             [' ', 'Set %m.api_namespace to %s', 'set_api_namespace', 'api_namespace', 'wp/v2'],
             [' ', 'Set %m.api_collection to %s', 'set_api_collection', 'api_collection', 'posts'],
-            ['r', 'Get %n of Collection', 'get_item_from_collection', 1],
-            ['R', 'Get Collection', 'get_collection'],
+            [' ', 'Get Collection', 'get_collection'],
+            ['r', 'Get item %m.collection of Collection', 'get_item_from_collection', 0],
+
         ],
         menus : {
           api_base: ['api_base', 'api_namespace', 'api_collection'],
+          collection: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
+
         },
         url: 'https://rfair404.github.io/scratch-rest'
         // Link to extension documentation, homepage, etc.
