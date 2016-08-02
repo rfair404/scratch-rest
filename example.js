@@ -28,17 +28,17 @@
     //callback for when base is set
     ext.set_api_base = function(api_base, value) {
         this.api_base = value;
-        console.log('setting api base to ' + value);
+        // console.log('setting api base to ' + value);
     };
     //callback for when namespace is set
     ext.set_api_namespace = function(api_namespace, value) {
         this.api_namespace = value;
-        console.log('setting api namespace to ' + value);
+        // console.log('setting api namespace to ' + value);
     };
     //callback for when collection is set
     ext.set_api_collection = function(api_collection, value) {
         this.api_collection = value;
-        console.log('setting api collection to ' + value);
+        // console.log('setting api collection to ' + value);
     };
 
     ext.get_api_url = function() {
@@ -51,20 +51,21 @@
         //make a general get method later
     };
     ext.get_collection = function( callback ) {
-    // Make an AJAX call to a given REST API and discover the available routes
+    // Make an AJAX call to a given REST API
     // console.log( 'probing ' + this.get_api_url() );
         $.ajax({
             url: this.get_api_url(),
             dataType: 'json',
             success: function( ret ){
                 this.current_collection = ret;
-                // callback(ret);
+                console.log(ret);
+                callback(ret);
             }
         });
     };
 
     ext.get_item_from_collection = function( pos, callback ){
-        //console.log( 'grabbing ' + pos + ' of ' + this.get_api_url() );
+        // console.log( 'grabbing ' + pos + ' of ' + this.get_api_url() );
         console.log( this.current_collection[pos] );
         callback(this.current_collection[pos]);
     };
@@ -75,7 +76,7 @@
             [' ', 'Set %m.api_base to %s', 'set_api_base', 'api_base', 'https://demo.wp-api.org/wp-json'],
             [' ', 'Set %m.api_namespace to %s', 'set_api_namespace', 'api_namespace', 'wp/v2'],
             [' ', 'Set %m.api_collection to %s', 'set_api_collection', 'api_collection', 'posts'],
-            ['w', 'Get Collection', 'get_collection'],
+            [' ', 'Get Collection', 'get_collection'],
             ['r', 'Get item %m.collection of Collection', 'get_item_from_collection', 0],
 
         ],
