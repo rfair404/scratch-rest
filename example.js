@@ -4,7 +4,7 @@
     var api_namespace = '';
     var api_collection = '';
     var api_url = '';
-    var current_collection = '';
+    var current_collection = 'foooooo';
 
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {
