@@ -1,4 +1,4 @@
-var SCRATCH_REST = Object;
+var SCRATCH_REST = [];
 
 // This is the actual scratch extension part
 (function(ext) {
