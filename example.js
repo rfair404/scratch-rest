@@ -4,7 +4,7 @@
     var api_namespace = '';
     var api_collection = '';
     var api_url = '';
-    var current_collection = Object;
+    var current_collection = '';
 
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {
@@ -62,7 +62,7 @@
             dataType: 'json',
             success: function( ret ){
                 this.current_collection = ret;
-                //console.log(ret);
+                console.log( this.get_current_collection() );
                 // callback(ret);
             }
         });
