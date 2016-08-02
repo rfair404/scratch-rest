@@ -40,6 +40,7 @@
             url: this.get_api_base(),
             dataType: 'json',
             success: function(ret){
+                console.log(ret);
                 callback(ret.name);
             }
         });
