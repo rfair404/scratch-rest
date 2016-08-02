@@ -18,17 +18,16 @@
     };
 
     ext.start = function() {
-      return true;
+        return true;
     };
-
 
     //callback for when base is set
     ext.set_api_base = function(api_base, value) {
         this.api_base = value;
-        console.log(join('setting api base to', value) );
+        console.log('setting api base to ' + value);
     };
     ext.get_api_base = function() {
-        console.log(join('the api base is', this.api_base) );
+        console.log('the api base is ' + this.api_base);
         return this.api_base;
     };
     ext._get = function(url) {
@@ -41,14 +40,14 @@
             url: this.get_api_base(),
             dataType: 'json',
             success: function(ret){
-                callback(ret);
+                callback(ret.name);
             }
         });
     };
     var descriptor = {
         blocks: [
             // ['h', 'Enable REST API', 'start'],
-            [' ', 'Set %m.api_base to %s', 'set_api_base', 'api_base', 'https://'],
+            [' ', 'Set %m.api_base to %s', 'set_api_base', 'api_base', 'https://example.com'],
             ['R', 'Discover API Routes', 'discover_routes'],
         ],
         menus : {
