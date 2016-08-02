@@ -65,9 +65,9 @@
     };
 
     ext.get_item_from_collection = function( pos, callback ){
-        // console.log( 'grabbing ' + pos + ' of ' + this.current_collection() );
-        console.log( this.current_collection[pos] );
-        callback(this.current_collection[pos]);
+        console.log( 'grabbing ' + pos + ' of collection' );
+        console.log( this.current_collection);
+        callback(this.current_collection);
     };
 
     var descriptor = {
