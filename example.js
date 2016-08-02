@@ -27,23 +27,22 @@
     //callback for when base is set
     ext.set_api_base = function(api_base, value) {
         this.api_base = value;
-        //console.log('setting api base to ' + value);
+        console.log('setting api base to ' + value);
     };
     //callback for when namespace is set
     ext.set_api_namespace = function(api_namespace, value) {
         this.api_namespace = value;
-        //console.log('setting api namespace to ' + value);
+        console.log('setting api namespace to ' + value);
     };
     //callback for when collection is set
     ext.set_api_collection = function(api_collection, value) {
         this.api_collection = value;
-        //console.log('setting api collection to ' + value);
+        console.log('setting api collection to ' + value);
     };
 
     ext.get_api_url = function() {
-        this.api_url = [ this.api_base, this.api_namespace, this.api_collection];
-        this.api_url.join('/');
-        //console.log('the api url route is ' +  this.api_url);
+        this.api_url = this.api_base + '/' + this.api_namespace + '/' + this.api_collection;
+        console.log('the api url route is ' +  this.api_url);
         return this.api_url;
     };
 
