@@ -66,9 +66,9 @@ var SCRATCH_REST = [];
         });
     };
 
-    ext.get_item_from_collection = function( pos, item, callback ){
-        console.log( SCRATCH_REST[pos][item] );
-        callback(SCRATCH_REST[pos][item]);
+    ext.get_item_from_collection = function( position, item, callback ){
+        console.log( SCRATCH_REST[position][item] );
+        callback(SCRATCH_REST[position][item]);
     };
 
     var descriptor = {
@@ -78,14 +78,13 @@ var SCRATCH_REST = [];
             [' ', 'Set %m.api_namespace to %s', 'set_api_namespace', 'api_namespace', 'wp/v2'],
             [' ', 'Set %m.api_collection to %s', 'set_api_collection', 'api_collection', 'posts'],
             [' ', 'Get Collection', 'get_collection'],
-            ['r', 'Get item %m.position field %m.item of Collection', 'get_item_from_collection', 0, 'name'],
+            ['r', 'Get item %m.position field %m.item of Collection', 'get_item_from_collection', '0', 'name'],
 
         ],
         menus : {
           api_base: ['api_base', 'api_namespace', 'api_collection'],
-          position: [0,1,2,3,4],
+          position: ['0','1','2','3','4'],
           item: ['name', 'author', 'date'],
-
         },
         url: 'https://rfair404.github.io/scratch-rest'
         // Link to extension documentation, homepage, etc.
