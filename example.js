@@ -65,8 +65,8 @@
         });
     };
 
-    ext.get_item_from_collection = function( callback, item ){
-        console.log( 'grabbing ' + item + ' of ' + this.get_api_url() );
+    ext.get_item_from_collection = function( pos ){
+        console.log( 'grabbing ' + pos + ' of ' + this.get_api_url() );
     };
 
     var descriptor = {
