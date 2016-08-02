@@ -58,9 +58,9 @@
             success: function(ret){
                 console.log(ret);
                 // var arr = Object.keys(ret).map(function (key) {return ret[key]});
-                Object.keys(ret).map(key => ret[key]);
-
-                callback(ret);
+                // Object.keys(ret).map(key => ret[key]);
+                callback(Object.keys(ret).map(function (key) {return ret[key]}));
+                // callback(ret);
             }
         });
     };
