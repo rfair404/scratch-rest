@@ -34,7 +34,7 @@
         menus : {
           api_base: ['api_base', 'api_namespace', 'api_endpoint'],
         },
-        url: 'http://rfair404.github.io/WP-REST-API-FOR-SCRATCHX'
+        url: 'https://rfair404.github.io/scratch-rest'
         // Link to extension documentation, homepage, etc.
     };
 
