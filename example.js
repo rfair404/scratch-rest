@@ -58,15 +58,15 @@
             dataType: 'json',
             success: function( ret ){
                 this.current_collection = ret;
-                console.log(ret);
+                // console.log(ret);
                 // callback(ret);
             }
         });
     };
 
     ext.get_item_from_collection = function( pos, callback ){
-        console.log( 'grabbing ' + pos + ' of ' + this.current_collection() );
-        console.log( this.current_collection.pos );
+        // console.log( 'grabbing ' + pos + ' of ' + this.current_collection() );
+        // console.log( this.current_collection.pos );
         callback(this.current_collection.pos);
     };
 
