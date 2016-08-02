@@ -65,7 +65,7 @@
     };
 
     ext.get_item_from_collection = function( pos, callback ){
-        console.log( 'grabbing ' + pos + ' of ' + this.get_api_url() );
+        console.log( 'grabbing ' + pos + ' of ' + this.current_collection() );
         console.log( this.current_collection.pos );
         callback(this.current_collection.pos);
     };
