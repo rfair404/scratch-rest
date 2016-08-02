@@ -60,7 +60,7 @@ var SCRATCH_REST = [];
             url: this.get_api_url(),
             dataType: 'json',
             success: function( ret ){
-                this.SCRATCH_REST = ret;
+                SCRATCH_REST = ret;
                 console.log( ret );
                 // callback(ret);
             }
