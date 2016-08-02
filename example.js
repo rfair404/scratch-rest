@@ -47,6 +47,10 @@
         return this.api_url;
     };
 
+    ext.get_current_collection = function() {
+        return this.current_collection;
+    };
+
     ext._get = function(url) {
         //make a general get method later
     };
@@ -66,8 +70,8 @@
 
     ext.get_item_from_collection = function( pos, callback ){
         console.log( 'grabbing ' + pos + ' of collection' );
-        console.log( this.current_collection[0] );
-        callback(this.current_collection);
+        console.log( this.get_current_collection() );
+        callback('fork');
     };
 
     var descriptor = {
