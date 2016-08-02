@@ -1,4 +1,4 @@
-var RFTEST = '';
+var SCRATCH_REST = Object;
 
 // This is the actual scratch extension part
 (function(ext) {
@@ -60,7 +60,7 @@ var RFTEST = '';
             url: this.get_api_url(),
             dataType: 'json',
             success: function( ret ){
-                this.current_collection = ret;
+                this.SCRATCH_REST = ret;
                 console.log( ret );
                 // callback(ret);
             }
@@ -69,7 +69,7 @@ var RFTEST = '';
 
     ext.get_item_from_collection = function( pos, callback ){
         console.log( 'grabbing ' + pos + ' of collection' );
-        console.log( this.current_collection );
+        console.log( SCRATCH_REST );
         callback('fork');
     };
 
