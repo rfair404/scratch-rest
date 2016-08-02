@@ -2,6 +2,26 @@
 (function(ext) {
     var api_base = '';
 
+    // Cleanup function when the extension is unloaded
+    ext._shutdown = function() {
+    };
+
+    // Status reporting code
+    // Return any message to be displayed as a tooltip.
+    // Status values: 0 = error (red), 1 = warning (yellow), 2 = ready (green)
+    ext._getStatus = function() {
+        return {status: 2, msg: 'Ready'};
+    };
+
+    ext.callback = function( value ){
+        return value;
+    };
+
+    ext.start = function() {
+      return true;
+    };
+
+
     //callback for when base is set
     ext.set_api_base = function(api_base, value) {
         this.api_base = value;
