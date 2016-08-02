@@ -35,7 +35,7 @@
     };
     ext.discover_routes = function(callback) {
     // Make an AJAX call to a given REST API and discover the available routes
-    console.log( 'probing ' + this.get_api_base );
+    console.log( 'probing ' + this.api_base );
         $.ajax({
             url: this.get_api_base(),
             dataType: 'json',
