@@ -50,20 +50,20 @@
     ext._get = function(url) {
         //make a general get method later
     };
-    ext.get_collection = function(callback) {
+    ext.get_collection = function( callback ) {
     // Make an AJAX call to a given REST API and discover the available routes
     // console.log( 'probing ' + this.get_api_url() );
         $.ajax({
             url: this.get_api_url(),
             dataType: 'json',
-            success: function(ret){
+            success: function( ret ){
                 this.current_collection = ret;
                 // callback(ret);
             }
         });
     };
 
-    ext.get_item_from_collection = function( pos ){
+    ext.get_item_from_collection = function( pos, callback ){
         console.log( 'grabbing ' + pos + ' of ' + this.get_api_url() );
         console.log( this.current_collection.pos );
         callback(this.current_collection.pos);
@@ -75,7 +75,7 @@
             [' ', 'Set %m.api_base to %s', 'set_api_base', 'api_base', 'https://demo.wp-api.org/wp-json'],
             [' ', 'Set %m.api_namespace to %s', 'set_api_namespace', 'api_namespace', 'wp/v2'],
             [' ', 'Set %m.api_collection to %s', 'set_api_collection', 'api_collection', 'posts'],
-            [' ', 'Get Collection', 'get_collection'],
+            ['R', 'Get Collection', 'get_collection'],
             ['r', 'Get item %m.collection of Collection', 'get_item_from_collection', 0],
 
         ],
