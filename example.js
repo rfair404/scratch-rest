@@ -59,7 +59,7 @@
             success: function( ret ){
                 this.current_collection = ret;
                 console.log(ret);
-                callback(ret);
+                // callback(ret);
             }
         });
     };
