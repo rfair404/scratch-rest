@@ -43,7 +43,7 @@
     ext.get_api_url = function() {
         this.api_url = [ this.api_base, this.api_namespace, this.api_collection];
         this.api_url.join('/');
-        console.log('the api url route is ' +  this.api_url);
+        //console.log('the api url route is ' +  this.api_url);
         return this.api_url;
     };
 
@@ -52,9 +52,9 @@
     };
     ext.discover_routes = function(callback) {
     // Make an AJAX call to a given REST API and discover the available routes
-    console.log( 'probing ' + this.api_base );
+    console.log( 'probing ' + this.get_api_url() );
         $.ajax({
-            url: this.get_api_base(),
+            url: this.get_api_url(),
             dataType: 'json',
             success: function(ret){
                 console.log(ret);
