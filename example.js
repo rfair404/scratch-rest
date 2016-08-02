@@ -66,7 +66,7 @@
 
     ext.get_item_from_collection = function( pos, callback ){
         console.log( 'grabbing ' + pos + ' of collection' );
-        console.log( this.current_collection);
+        console.log( this.current_collection[0] );
         callback(this.current_collection);
     };
 
