@@ -1,3 +1,5 @@
+var RFTEST = '';
+
 // This is the actual scratch extension part
 (function(ext) {
     var api_base = '';
