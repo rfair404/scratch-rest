@@ -67,7 +67,7 @@
 
     ext.get_item_from_collection = function( pos, callback ){
         console.log( 'grabbing ' + pos + ' of collection' );
-        console.log( this.get_current_collection() );
+        console.log( this.current_collection );
         callback('fork');
     };
 
