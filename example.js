@@ -51,9 +51,6 @@
         return this.current_collection;
     };
 
-    ext._get = function(url) {
-        //make a general get method later
-    };
     ext.get_collection = function( callback ) {
     // Make an AJAX call to a given REST API
     // console.log( 'probing ' + this.get_api_url() );
@@ -62,7 +59,7 @@
             dataType: 'json',
             success: function( ret ){
                 this.current_collection = ret;
-                console.log( this.get_current_collection() );
+                console.log( ret );
                 // callback(ret);
             }
         });
