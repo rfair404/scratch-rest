@@ -64,9 +64,9 @@
     };
 
     ext.get_item_from_collection = function( pos, callback ){
-        console.log( 'grabbing ' + pos + ' of ' + this.get_api_url() );
-        console.log( this.current_collection.pos );
-        callback(this.current_collection.pos);
+        //console.log( 'grabbing ' + pos + ' of ' + this.get_api_url() );
+        console.log( this.current_collection[pos] );
+        callback(this.current_collection[pos]);
     };
 
     var descriptor = {
@@ -75,7 +75,7 @@
             [' ', 'Set %m.api_base to %s', 'set_api_base', 'api_base', 'https://demo.wp-api.org/wp-json'],
             [' ', 'Set %m.api_namespace to %s', 'set_api_namespace', 'api_namespace', 'wp/v2'],
             [' ', 'Set %m.api_collection to %s', 'set_api_collection', 'api_collection', 'posts'],
-            ['R', 'Get Collection', 'get_collection'],
+            ['w', 'Get Collection', 'get_collection'],
             ['r', 'Get item %m.collection of Collection', 'get_item_from_collection', 0],
 
         ],
