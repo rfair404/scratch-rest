@@ -68,9 +68,9 @@ var SCRATCH_REST = [];
     };
 
     ext.get_item_from_collection = function( pos, callback ){
-        console.log( 'grabbing ' + pos + ' of collection' );
-        console.log( SCRATCH_REST );
-        callback('fork');
+        //console.log( 'grabbing ' + pos + ' of collection' );
+        console.log( SCRATCH_REST[pos] );
+        callback(SCRATCH_REST[pos]);
     };
 
     var descriptor = {
