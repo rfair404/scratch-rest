@@ -5,8 +5,10 @@
     //callback for when base is set
     ext.set_api_base = function(api_base, value) {
         this.api_base = value;
+        console.log(join('setting api base to', value) );
     };
     ext.get_api_base = function() {
+        console.log(join('the api base is', this.api_base) );
         return this.api_base;
     };
     ext._get = function(url) {
@@ -14,11 +16,11 @@
     };
     ext.discover_routes = function(callback) {
     // Make an AJAX call to a given REST API and discover the available routes
+    console.log( join( 'probing', this.api_base ) );
         $.ajax({
             url: this.get_api_base(),
             dataType: 'json',
             success: function(ret){
-                console.log(ret);
                 callback(ret);
             }
         });
